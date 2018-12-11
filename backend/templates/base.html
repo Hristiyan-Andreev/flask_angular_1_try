@@ -1,0 +1,28 @@
+<html>
+    <head>
+	
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.5/umd/popper-utils.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	
+
+	{% assets "main_js" %}
+	<script type = "text/javascript" src="{{ ASSET_URL }}"></script>
+	{% endassets %}
+
+    <title>TEMA Elemental API</title>
+    </head>
+    <body>
+		<center><div>Menu: <a href='/command_center'>Home</a></div></center>
+		<hr>
+		<div id="header">
+			<h1><center>TEMA Elemental LIVE API Controller</center></h1>
+		</div>
+		{% block content%}{% endblock %}
+    </body>
+</html>
