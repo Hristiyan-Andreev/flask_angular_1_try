@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Stream } from 'stream_class';
+import { Stream } from '../streams/stream_class';
 
 @Component({
   selector: 'app-streams',
@@ -11,10 +11,12 @@ export class StreamsComponent implements OnInit {
 		gpi: 16,
 		stream_id: 5,
 		in_cue: false,
-		channel_locked: false
+    channel_locked: false,
 	};
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
   }

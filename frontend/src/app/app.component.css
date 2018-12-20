@@ -1,0 +1,15 @@
+.main-header{
+    background-color:#f4f4f4f4;
+    border-bottom: 2px black solid;
+    text-align: center;
+    padding: 10px;
+}
+
+.main-header h1{
+    padding: 0px;
+    margin: 0px;
+}
+
+.items {
+    color: cadetblue;
+}

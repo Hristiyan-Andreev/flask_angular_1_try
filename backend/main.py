@@ -5,13 +5,13 @@ import time
 from flask import Flask
 
 
+
 # sys.path.append('/home/pi/config') #Only for Raspberry
 import config as cf
 
 # Configure the web app (needed only for autorestar)
 app = Flask(__name__)
 app.config.from_object(cf.FlaskConfig)
-
 
 @app.route('/')
 def index():
