@@ -1,10 +1,10 @@
 import sys
 import liveapi
 import time
-#import RPi.GPIO as GPIO
-from flask import Flask
 
 
+from flask import Flask, jsonify
+from helpers import TimeMeasure, GpiStream, StreamSchema, gpi_stream_dict
 
 # sys.path.append('/home/pi/config') #Only for Raspberry
 import config as cf
@@ -13,9 +13,16 @@ import config as cf
 app = Flask(__name__)
 app.config.from_object(cf.FlaskConfig)
 
-@app.route('/')
+
+@app.route('/', methods = ['GET'])
 def index():
     return "Working"
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')     
+@app.route('/list_inputs', methods = ['GET'])
+def list_inputs():
+    schema = StreamSchema(many = True)
+    inputs = jsonify(gpi_stream_dict[13].__dict__)
+    return "Inputs"
+
+#if __name__ == '__main__':
+#   app.run(debug=True, host='0.0.0.0')     
