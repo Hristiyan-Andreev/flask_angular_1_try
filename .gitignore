@@ -3,3 +3,4 @@ Pipfile.lock
 *.json
 *.pyc
 *.json
+.vscode/settings.json
