@@ -11,10 +11,12 @@ export class StreamsComponent implements OnInit {
 		gpi: 16,
 		stream_id: 5,
 		in_cue: false,
-		channel_locked: false
+    channel_locked: false,
 	};
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
   }

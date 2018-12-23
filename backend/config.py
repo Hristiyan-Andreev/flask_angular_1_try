@@ -9,11 +9,14 @@ elemental_ip = '192.168.2.3'
 	# All must be seperated by commas
 gpi2stream = {
 		21: '5',
-		13: '7',
+		13: '6',
 }
 
 # Time to wait after edge detection
+lock_interval = 5
 wait_time = 5
+
+
 
 
 # Dont touch
