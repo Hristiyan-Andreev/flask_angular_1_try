@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Stream } from 'stream_class';
+import { Stream } from '../streams/stream_class';
 
 @Component({
   selector: 'app-streams',
