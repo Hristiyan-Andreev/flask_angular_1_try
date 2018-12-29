@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stream } from '../streams/stream_class';
+import { DatafetchService } from '../../services/datafetch.service';
+
 
 @Component({
   selector: 'app-streams',
@@ -14,11 +16,13 @@ export class StreamsComponent implements OnInit {
     channel_locked: false,
 	};
 
-  constructor() { 
+  constructor(private dataFetch: DatafetchService) {
+    this.dataFetch.getStreams();
     
   }
 
   ngOnInit() {
+
   }
 
 }

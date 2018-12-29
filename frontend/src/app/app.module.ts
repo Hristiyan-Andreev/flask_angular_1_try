@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StreamsComponent } from './components/streams/streams.component';
+import { DatafetchService } from './services/datafetch.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { StreamsComponent } from './components/streams/streams.component';
     StreamsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DatafetchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

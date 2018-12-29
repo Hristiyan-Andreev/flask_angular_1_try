@@ -28,11 +28,13 @@ class TimeMeasure():
 
 # GPI to Stream class with more information
 class GpiStream:
+    gpi = 0
     stream_id = '0'
     in_cue = False
     channel_locked = False
     
-    def __init__(self, id):
+    def __init__(self, id, gpi):
+        self.gpi = gpi
         self.stream_id = id
         self.in_cue = False
         self.channel_locked = False
@@ -85,7 +87,7 @@ reaction_time = TimeMeasure()
 # Make a new dict with GPIs as Keys and GpiStreams as values
 gpi_stream_dict = {}
 for gpi, id in cf.gpi2stream.items():
-    gpi_stream_dict[gpi] = GpiStream(id)
+    gpi_stream_dict[gpi] = GpiStream(id, gpi)
 
 
 # Setup GPIO inputs/outputs
