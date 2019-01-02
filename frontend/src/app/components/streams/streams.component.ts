@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stream } from '../streams/stream_class';
 import { DatafetchService } from '../../services/datafetch.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,20 +10,30 @@ import { DatafetchService } from '../../services/datafetch.service';
   styleUrls: ['./streams.component.css']
 })
 export class StreamsComponent implements OnInit {
-	stream1: Stream = {
-		gpi: 16,
-		stream_id: 5,
-		in_cue: false,
-    channel_locked: false,
-	};
+  streamsSubs: Subscription;
+	streams: Stream[];
 
   constructor(private dataFetch: DatafetchService) {
-    this.dataFetch.getStreams();
+    
     
   }
 
-  ngOnInit() {
+  getStreams() {
+    this.streamsSubs = this.dataFetch
+    .getStreams()
+    .subscribe((streams) =>{
+     /* var stream = new Stream (streams[0].gpi, streams[0].stream_id,
+        streams[0].in_cue, streams[0].channel_locked);
+     */
+      this.streams = streams as any;
+      console.log(this.streams)
+    });
+    
+  };
 
+
+  ngOnInit() {
+    this.getStreams();
   }
 
 }

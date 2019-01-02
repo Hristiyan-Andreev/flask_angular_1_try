@@ -1,4 +1,5 @@
-<div>GPI {{stream1.gpi}} to {{stream1.stream_id}}</div>
-
-<div>In cue: {{stream1.in_cue}}</div>
-<div>Locked: {{stream1.channel_locked}}</div>
+<div *ngFor= 'let stream of streams'>
+    <ul>
+        <li> GPI: {{stream.gpi}} mapped to Stream: {{stream.stream_id}} </li>
+    </ul>
+</div>
