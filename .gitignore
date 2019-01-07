@@ -5,3 +5,4 @@ Pipfile.lock
 *.json
 .vscode/settings.json
 .vscode/settings.json
+backend/Pipfile.lock

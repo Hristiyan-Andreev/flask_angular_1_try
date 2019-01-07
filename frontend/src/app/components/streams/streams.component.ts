@@ -22,9 +22,6 @@ export class StreamsComponent implements OnInit {
     this.streamsSubs = this.dataFetch
     .getStreams()
     .subscribe((streams) =>{
-     /* var stream = new Stream (streams[0].gpi, streams[0].stream_id,
-        streams[0].in_cue, streams[0].channel_locked);
-     */
       this.streams = streams as any;
       console.log(this.streams)
     });
